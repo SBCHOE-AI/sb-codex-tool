@@ -17,26 +17,34 @@
 
 ## Current Status
 
-- Expanded `README.md` into a detailed GitHub-facing guide that documents the
-  tool's purpose, workflow, commands, state layout, agent model, verification
-  model, work journal, and packaging flow.
-- Added GitHub repository metadata to `package.json` for
-  `SBCHOE-AI/sb-codex-tool`.
-- Extended `tests/distribution.test.ts` so the richer README and package
-  metadata stay covered.
-- Verified that `npm pack --dry-run` remains focused on the intended tarball
-  surface.
-- GitHub repository creation and push remain as the final operational step
-  after verified closure.
+- Expand the README into a detailed user-facing guide, add GitHub repository
+metadata to the package, and prepare the project for upload to a new GitHub
+repository.
+- Expanded `README.md` into a detailed document that covers motivation,
+principles, installation, quick start, state layout, agent roles,
+verification, work-journal behavior, git context, packaging checks, and
+development notes.
+- Added repository metadata to `package.json` for the intended GitHub
+repository at `SBCHOE-AI/sb-codex-tool`.
+- Extended `tests/distribution.test.ts` so distribution checks also cover the
+richer README and GitHub repository metadata.
+- Verified that `npm pack --dry-run` still excludes internal state, tests, and
+research docs from the package tarball.
+- Initialized the local Git repository, created the private GitHub repository
+at `https://github.com/SBCHOE-AI/sb-codex-tool`, and pushed `main` to
+`origin`.
+- Implementation and refactor are ready for fresh verification.
 
 ## Git Context
 
 - Run artifact: .sb-codex-tool/runs/2026-04-05-detailed-readme-github-publish-run.json
-- Git available: no
-- Branch: unavailable
-- Dirty: unavailable
-- Changed files: unavailable outside a Git repository
-
+- Git available: yes
+- Branch: main
+- Dirty: yes
+- Changed files:
+  - sb-codex-tool/handoffs/2026-04-05-detailed-readme-github-publish-to-verification.md
+  - sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md
+  - sb-codex-tool/summaries/2026-04-05-detailed-readme-github-publish-execution-summary.md
 
 ## Expected Verification Checks
 
@@ -45,16 +53,16 @@
 - Run `npm pack --dry-run`.
 - Run `node --experimental-strip-types src/cli.ts doctor`.
 - Confirm that the repository exists at `SBCHOE-AI/sb-codex-tool` and that the
-  local `origin` remote points to it after publish.
+local `origin` remote points to it.
 
 ## Open Risks
 
-- GitHub repository creation and first push must still be performed after
-  verified closure.
+- None.
 
 ## Next-Agent Guidance
 
 - Start from this execution summary as the latest relevant summary.
 - Then review `.sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md`.
 - Then review `.sb-codex-tool/guides/2026-04-05-detailed-readme-github-publish-scope.md`.
-- Then inspect `README.md`, `package.json`, and `tests/distribution.test.ts`.
+- Then inspect `README.md`, `package.json`, `tests/distribution.test.ts`, and
+confirm the GitHub remote metadata from the local repository.

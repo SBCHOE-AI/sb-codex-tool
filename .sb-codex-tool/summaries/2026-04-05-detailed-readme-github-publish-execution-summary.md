@@ -22,14 +22,17 @@
   richer README and GitHub repository metadata.
 - Verified that `npm pack --dry-run` still excludes internal state, tests, and
   research docs from the package tarball.
-- GitHub repository creation and push are the remaining operational step after
-  verified closure.
+- Initialized the local Git repository, created the private GitHub repository
+  at `https://github.com/SBCHOE-AI/sb-codex-tool`, and pushed `main` to
+  `origin`.
 
 ## Checks Run
 
 - `node --experimental-strip-types --test tests/distribution.test.ts`
 - `node --experimental-strip-types --test tests/*.test.ts`
 - `npm pack --dry-run`
+- `gh repo create SBCHOE-AI/sb-codex-tool --private --source=. --remote=origin --push --description "Lightweight Codex workflow and runtime scaffold for general software projects."`
+- `gh repo view SBCHOE-AI/sb-codex-tool --json nameWithOwner,visibility,description,url`
 
 ## Plan vs Actual
 
@@ -40,8 +43,8 @@
 - Actual: `package.json` now includes repository, homepage, and issue tracker
   URLs for `SBCHOE-AI/sb-codex-tool`.
 - Planned: publish the current project to a new GitHub repository.
-- Actual: local preparation is complete; repository creation and push are the
-  remaining operational step.
+- Actual: the repository exists at `https://github.com/SBCHOE-AI/sb-codex-tool`,
+  `origin` points to it, and `main` is published.
 
 ## Refactor Notes
 
@@ -57,4 +60,5 @@
 - Start from this execution summary as the latest relevant summary.
 - Then review `.sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md`.
 - Then review `.sb-codex-tool/guides/2026-04-05-detailed-readme-github-publish-scope.md`.
-- Then inspect `README.md`, `package.json`, and `tests/distribution.test.ts`.
+- Then inspect `README.md`, `package.json`, `tests/distribution.test.ts`, and
+  confirm the GitHub remote metadata from the local repository.

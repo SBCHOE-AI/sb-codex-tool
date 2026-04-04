@@ -41,4 +41,4 @@
   commit the current project state, and push `main`
 - verify: run `gh repo view SBCHOE-AI/sb-codex-tool --json nameWithOwner,visibility,description`
   and confirm `origin` points to the new repository
-- done: pending fresh verification
+- done: yes
