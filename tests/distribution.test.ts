@@ -72,6 +72,7 @@ test('npm pack dry-run stays focused on the distribution surface', () => {
   assert.equal(result.status, 0, result.stderr || result.stdout);
 
   const output = `${result.stdout}\n${result.stderr}`;
+  assert.match(output, /README\.ko\.md/);
   assert.match(output, /README\.md/);
   assert.match(output, /bin\/sb-codex-tool\.js/);
   assert.match(output, /src\/cli\.ts/);

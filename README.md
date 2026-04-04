@@ -7,6 +7,8 @@ It keeps project state, hot-path guidance, fresh-agent verification, and
 human-readable work journals in one inspectable layout without taking over the
 whole codebase.
 
+Korean README: [README.ko.md](https://github.com/SBCHOE-AI/sb-codex-tool/blob/main/README.ko.md)
+
 ## Why It Exists
 
 `sb-codex-tool` is designed for projects that want stronger agent discipline
@@ -260,6 +262,8 @@ npm run pack:check
 
 `pack:check` verifies the published tarball surface stays focused on the CLI
 runtime rather than shipping local state, tests, or internal research docs.
+Root README documents such as `README.md` and `README.ko.md` may still be
+included by npm as repository-facing documentation.
 
 For a fuller local release check:
 
@@ -272,8 +276,9 @@ npm run release:check
 - The package currently runs TypeScript directly through Node's
   `--experimental-strip-types` support.
 - The distribution surface is controlled with `package.json#files`.
-- The published tarball is intentionally limited to `bin/`, `src/`, and
-  `README.md`.
+- The published tarball is intentionally limited to runtime files plus root
+  README documents that npm auto-includes, such as `README.md` and
+  `README.ko.md`.
 - Internal `.sb-codex-tool/` state is useful inside the repository, but is not
   part of the package payload.
 

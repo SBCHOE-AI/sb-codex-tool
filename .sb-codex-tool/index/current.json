@@ -2,31 +2,31 @@
   "version": 2,
   "currentStage": "clarify",
   "nextAction": "Start the next implementation increment from a new approved plan.",
-  "latestApprovedPlan": ".sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md",
-  "latestRelevantSummary": ".sb-codex-tool/summaries/2026-04-05-detailed-readme-github-publish-verification-summary.md",
-  "latestRun": ".sb-codex-tool/runs/2026-04-05-detailed-readme-github-publish-run.json",
+  "latestApprovedPlan": ".sb-codex-tool/plans/2026-04-05-korean-readme-approved.md",
+  "latestRelevantSummary": ".sb-codex-tool/summaries/2026-04-05-korean-readme-verification-summary.md",
+  "latestRun": ".sb-codex-tool/runs/2026-04-05-korean-readme-run.json",
   "latestConsistencyReview": ".sb-codex-tool/reviews/2026-04-05-consistency-review-flow-locke-consistency-review.md",
   "latestAssignmentLifecycle": null,
-  "currentGuide": ".sb-codex-tool/guides/2026-04-05-detailed-readme-github-publish-scope.md",
-  "currentHandoff": ".sb-codex-tool/handoffs/2026-04-05-detailed-readme-github-publish-to-verification.md",
-  "currentReview": ".sb-codex-tool/reviews/2026-04-05-detailed-readme-github-publish-fresh-verification.md",
+  "currentGuide": ".sb-codex-tool/guides/2026-04-05-korean-readme-scope.md",
+  "currentHandoff": ".sb-codex-tool/handoffs/2026-04-05-korean-readme-to-verification.md",
+  "currentReview": ".sb-codex-tool/reviews/2026-04-05-korean-readme-fresh-verification.md",
   "currentFocusModules": [
     "AGENTS.md",
     ".sb-codex-tool/guides/code-consistency.md",
-    ".sb-codex-tool/summaries/2026-04-05-detailed-readme-github-publish-verification-summary.md",
-    ".sb-codex-tool/runs/2026-04-05-detailed-readme-github-publish-run.json",
-    ".sb-codex-tool/reviews/2026-04-05-detailed-readme-github-publish-fresh-verification.md",
-    ".sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md",
-    ".sb-codex-tool/guides/2026-04-05-detailed-readme-github-publish-scope.md"
+    ".sb-codex-tool/summaries/2026-04-05-korean-readme-verification-summary.md",
+    ".sb-codex-tool/runs/2026-04-05-korean-readme-run.json",
+    ".sb-codex-tool/reviews/2026-04-05-korean-readme-fresh-verification.md",
+    ".sb-codex-tool/plans/2026-04-05-korean-readme-approved.md",
+    ".sb-codex-tool/guides/2026-04-05-korean-readme-scope.md"
   ],
   "hotPath": [
     ".sb-codex-tool/project.md",
     ".sb-codex-tool/state.md",
     ".sb-codex-tool/guides/read-this-first.md",
     ".sb-codex-tool/guides/code-consistency.md",
-    ".sb-codex-tool/summaries/2026-04-05-detailed-readme-github-publish-verification-summary.md",
-    ".sb-codex-tool/plans/2026-04-05-detailed-readme-github-publish-approved.md",
-    ".sb-codex-tool/guides/2026-04-05-detailed-readme-github-publish-scope.md"
+    ".sb-codex-tool/summaries/2026-04-05-korean-readme-verification-summary.md",
+    ".sb-codex-tool/plans/2026-04-05-korean-readme-approved.md",
+    ".sb-codex-tool/guides/2026-04-05-korean-readme-scope.md"
   ],
   "activeAgents": {
     "main": "current main session",
@@ -36,9 +36,9 @@
   },
   "assignmentGuides": {},
   "notes": [
-    "Current work cycle: Detailed README and GitHub Publish.",
+    "Current work cycle: Korean README.",
     "The increment is closed with verdict pass.",
     "The next increment can start from a new approved plan.",
-    "Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-detailed-readme-github-publish-execution-summary.md"
+    "Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-korean-readme-execution-summary.md"
   ]
 }
