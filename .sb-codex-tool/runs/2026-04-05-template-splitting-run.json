@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-template-splitting",
+  "dateStamp": "2026-04-05",
+  "slug": "template-splitting",
+  "title": "Template Splitting",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": false,
+    "branch": null,
+    "dirty": false,
+    "changedFiles": []
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-template-splitting-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-template-splitting-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-template-splitting-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-template-splitting-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-template-splitting-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-template-splitting-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-04T16:16:23.435Z",
+  "updatedAt": "2026-04-04T16:21:50.668Z",
+  "closedAt": "2026-04-04T16:21:50.668Z"
+}

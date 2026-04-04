@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-multiline-section-parsing",
+  "dateStamp": "2026-04-05",
+  "slug": "multiline-section-parsing",
+  "title": "Multiline Section Parsing",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": false,
+    "branch": null,
+    "dirty": false,
+    "changedFiles": []
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-multiline-section-parsing-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-multiline-section-parsing-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-multiline-section-parsing-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-multiline-section-parsing-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-multiline-section-parsing-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-multiline-section-parsing-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-04T15:46:25.598Z",
+  "updatedAt": "2026-04-04T15:51:58.105Z",
+  "closedAt": "2026-04-04T15:51:58.105Z"
+}

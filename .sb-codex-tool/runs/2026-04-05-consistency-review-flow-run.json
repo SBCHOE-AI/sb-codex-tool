@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-consistency-review-flow",
+  "dateStamp": "2026-04-05",
+  "slug": "consistency-review-flow",
+  "title": "Consistency Review Flow",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": false,
+    "branch": null,
+    "dirty": false,
+    "changedFiles": []
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-consistency-review-flow-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-consistency-review-flow-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-consistency-review-flow-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-consistency-review-flow-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-consistency-review-flow-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-consistency-review-flow-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-04T15:02:21.344Z",
+  "updatedAt": "2026-04-04T15:17:15.431Z",
+  "closedAt": "2026-04-04T15:17:15.431Z"
+}

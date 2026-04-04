@@ -1,0 +1,7 @@
+# sb-codex-tool default agent-ignore patterns
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+.sb-codex-tool/logs/work-journal/

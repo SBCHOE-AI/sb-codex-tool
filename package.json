@@ -1,0 +1,41 @@
+{
+  "name": "sb-codex-tool",
+  "version": "0.1.0",
+  "description": "Lightweight Codex workflow and runtime scaffold for general software projects.",
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SBCHOE-AI/sb-codex-tool.git"
+  },
+  "homepage": "https://github.com/SBCHOE-AI/sb-codex-tool#readme",
+  "bugs": {
+    "url": "https://github.com/SBCHOE-AI/sb-codex-tool/issues"
+  },
+  "type": "module",
+  "files": [
+    "bin",
+    "src",
+    "README.md"
+  ],
+  "keywords": [
+    "codex",
+    "agent",
+    "workflow",
+    "cli"
+  ],
+  "bin": {
+    "sb-codex-tool": "./bin/sb-codex-tool.js"
+  },
+  "scripts": {
+    "start": "node --experimental-strip-types src/cli.ts",
+    "setup:tool": "node --experimental-strip-types src/cli.ts setup",
+    "doctor": "node --experimental-strip-types src/cli.ts doctor",
+    "status": "node --experimental-strip-types src/cli.ts status",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "pack:check": "npm pack --dry-run",
+    "release:check": "npm run test && npm run pack:check"
+  },
+  "engines": {
+    "node": ">=25.0.0"
+  }
+}

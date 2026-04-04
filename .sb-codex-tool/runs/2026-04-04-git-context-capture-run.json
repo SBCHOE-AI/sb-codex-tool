@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-04-git-context-capture",
+  "dateStamp": "2026-04-04",
+  "slug": "git-context-capture",
+  "title": "Git Context Capture",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": false,
+    "branch": null,
+    "dirty": false,
+    "changedFiles": []
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-04-git-context-capture-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-04-git-context-capture-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-04-git-context-capture-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-04-git-context-capture-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-04-git-context-capture-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-04-git-context-capture-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-04.md"
+  },
+  "startedAt": "2026-04-04T14:42:48.263Z",
+  "updatedAt": "2026-04-04T14:46:43.902Z",
+  "closedAt": "2026-04-04T14:46:43.902Z"
+}

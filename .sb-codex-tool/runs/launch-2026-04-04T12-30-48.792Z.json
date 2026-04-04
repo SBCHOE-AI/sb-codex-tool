@@ -1,0 +1,18 @@
+{
+  "launchedAt": "2026-04-04T12:30:48.793Z",
+  "cwd": "/Users/seongbok/Workspace/MakeFramework",
+  "args": [
+    "--no-alt-screen"
+  ],
+  "instructionSurface": [
+    "AGENTS.md",
+    ".sb-codex-tool/project.md",
+    ".sb-codex-tool/state.md",
+    ".sb-codex-tool/guides/read-this-first.md",
+    ".sb-codex-tool/guides/code-consistency.md",
+    ".sb-codex-tool/summaries/2026-04-04-initial-scaffold-verification-summary.md",
+    ".sb-codex-tool/reviews/2026-04-04-fresh-verification-template.md",
+    ".sb-codex-tool/plans/2026-04-04-initial-scaffold-approved.md",
+    ".sb-codex-tool/summaries/2026-04-04-initial-scaffold-execution-summary.md"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-doctor-semantic-validation",
+  "dateStamp": "2026-04-05",
+  "slug": "doctor-semantic-validation",
+  "title": "Doctor Semantic Validation",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": false,
+    "branch": null,
+    "dirty": false,
+    "changedFiles": []
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-doctor-semantic-validation-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-doctor-semantic-validation-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-doctor-semantic-validation-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-doctor-semantic-validation-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-doctor-semantic-validation-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-doctor-semantic-validation-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-04T15:19:33.302Z",
+  "updatedAt": "2026-04-04T15:29:59.740Z",
+  "closedAt": "2026-04-04T15:29:59.740Z"
+}

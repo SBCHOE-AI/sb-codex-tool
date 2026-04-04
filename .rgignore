@@ -1,0 +1,8 @@
+# Added by sb-codex-tool
+
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+.sb-codex-tool/logs/work-journal/
