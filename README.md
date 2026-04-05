@@ -45,16 +45,24 @@ work more repeatable inside a normal repository.
 
 ## Install
 
-For local use in a project:
+One-off from npm after publish:
+
+```bash
+npx sb-codex-tool@latest setup
+```
+
+Install locally from npm after publish:
 
 ```bash
 npm install --save-dev sb-codex-tool
+npm exec sb-codex-tool -- setup
 ```
 
-For one-off execution:
+Install locally from the public GitHub repository:
 
 ```bash
-npx sb-codex-tool setup
+npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git
+npm exec sb-codex-tool -- setup
 ```
 
 ## Quick Start

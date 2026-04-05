@@ -1,32 +1,33 @@
 {
   "version": 2,
   "currentStage": "clarify",
-  "nextAction": "Start the next implementation increment from a new approved plan.",
-  "latestApprovedPlan": ".sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md",
-  "latestRelevantSummary": ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md",
-  "latestRun": ".sb-codex-tool/runs/2026-04-05-getting-started-manual-run.json",
+  "nextAction": "Fill in .sb-codex-tool/plans/2026-04-05-public-release-approved.md and narrow .sb-codex-tool/guides/2026-04-05-public-release-scope.md before implementation starts.",
+  "latestApprovedPlan": ".sb-codex-tool/plans/2026-04-05-public-release-approved.md",
+  "latestRelevantSummary": ".sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md",
+  "latestRun": ".sb-codex-tool/runs/2026-04-05-public-release-run.json",
   "latestConsistencyReview": ".sb-codex-tool/reviews/2026-04-05-consistency-review-flow-locke-consistency-review.md",
   "latestAssignmentLifecycle": null,
-  "currentGuide": ".sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md",
-  "currentHandoff": ".sb-codex-tool/handoffs/2026-04-05-getting-started-manual-to-verification.md",
-  "currentReview": ".sb-codex-tool/reviews/2026-04-05-getting-started-manual-fresh-verification.md",
+  "currentGuide": ".sb-codex-tool/guides/2026-04-05-public-release-scope.md",
+  "currentHandoff": ".sb-codex-tool/handoffs/2026-04-05-public-release-to-verification.md",
+  "currentReview": ".sb-codex-tool/reviews/2026-04-05-public-release-fresh-verification.md",
   "currentFocusModules": [
     "AGENTS.md",
     ".sb-codex-tool/guides/code-consistency.md",
-    ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md",
-    ".sb-codex-tool/runs/2026-04-05-getting-started-manual-run.json",
-    ".sb-codex-tool/reviews/2026-04-05-getting-started-manual-fresh-verification.md",
-    ".sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md",
-    ".sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md"
+    ".sb-codex-tool/runs/2026-04-05-public-release-run.json",
+    ".sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md",
+    ".sb-codex-tool/plans/2026-04-05-public-release-approved.md",
+    ".sb-codex-tool/guides/2026-04-05-public-release-scope.md",
+    ".sb-codex-tool/handoffs/2026-04-05-public-release-to-verification.md",
+    ".sb-codex-tool/reviews/2026-04-05-public-release-fresh-verification.md"
   ],
   "hotPath": [
     ".sb-codex-tool/project.md",
     ".sb-codex-tool/state.md",
     ".sb-codex-tool/guides/read-this-first.md",
     ".sb-codex-tool/guides/code-consistency.md",
-    ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md",
-    ".sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md",
-    ".sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md"
+    ".sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md",
+    ".sb-codex-tool/plans/2026-04-05-public-release-approved.md",
+    ".sb-codex-tool/guides/2026-04-05-public-release-scope.md"
   ],
   "activeAgents": {
     "main": "current main session",
@@ -36,9 +37,8 @@
   },
   "assignmentGuides": {},
   "notes": [
-    "Current work cycle: Getting Started Manual.",
-    "The increment is closed with verdict pass.",
-    "The next increment can start from a new approved plan.",
-    "Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-getting-started-manual-execution-summary.md"
+    "Current work cycle: Public Repo and npm Release.",
+    "Fill in the approved plan and scope guide before implementation starts.",
+    "Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md"
   ]
 }

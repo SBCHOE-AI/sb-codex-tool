@@ -13,6 +13,7 @@ test('package metadata is ready for npm distribution checks', () => {
     name: string;
     private?: boolean;
     license?: string;
+    publishConfig?: { access?: string };
     files?: string[];
     repository?: { type?: string; url?: string };
     homepage?: string;
@@ -24,7 +25,8 @@ test('package metadata is ready for npm distribution checks', () => {
   assert.equal(packageJson.name, 'sb-codex-tool');
   assert.notEqual(packageJson.private, true);
   assert.equal(packageJson.license, 'UNLICENSED');
-  assert.deepEqual(packageJson.files, ['bin', 'src', 'README.md']);
+  assert.equal(packageJson.publishConfig?.access, 'public');
+  assert.deepEqual(packageJson.files, ['bin', 'dist', 'README.md']);
   assert.equal(packageJson.repository?.type, 'git');
   assert.equal(
     packageJson.repository?.url,
@@ -39,10 +41,16 @@ test('package metadata is ready for npm distribution checks', () => {
     'https://github.com/SBCHOE-AI/sb-codex-tool/issues',
   );
   assert.equal(packageJson.bin?.['sb-codex-tool'], './bin/sb-codex-tool.js');
+  assert.equal(
+    packageJson.scripts?.['build'],
+    'esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js',
+  );
+  assert.equal(packageJson.scripts?.['prepare'], 'npm run build');
+  assert.equal(packageJson.scripts?.['prepack'], 'npm run build');
   assert.equal(packageJson.scripts?.['pack:check'], 'npm pack --dry-run');
   assert.equal(
     packageJson.scripts?.['release:check'],
-    'npm run test && npm run pack:check',
+    'npm run build && npm run test && npm run pack:check',
   );
 });
 
@@ -55,6 +63,12 @@ test('README documents install, workflow, and packaging checks', () => {
   assert.match(readme, /## Agent Model/);
   assert.match(readme, /## Verification Model/);
   assert.match(readme, /npm install --save-dev sb-codex-tool/);
+  assert.match(readme, /npx sb-codex-tool@latest setup/);
+  assert.match(readme, /npm exec sb-codex-tool -- setup/);
+  assert.match(
+    readme,
+    /npm install --save-dev git\+https:\/\/github\.com\/SBCHOE-AI\/sb-codex-tool\.git/,
+  );
   assert.match(readme, /sb-codex-tool setup/);
   assert.match(readme, /sb-codex-tool doctor/);
   assert.match(readme, /sb-codex-tool status/);
@@ -75,7 +89,7 @@ test('npm pack dry-run stays focused on the distribution surface', () => {
   assert.match(output, /README\.ko\.md/);
   assert.match(output, /README\.md/);
   assert.match(output, /bin\/sb-codex-tool\.js/);
-  assert.match(output, /src\/cli\.ts/);
+  assert.match(output, /dist\/cli\.js/);
   assert.doesNotMatch(output, /\.sb-codex-tool\//);
   assert.doesNotMatch(output, /tests\//);
   assert.doesNotMatch(output, /docs\/codex-tooling-research\//);

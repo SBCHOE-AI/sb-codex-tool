@@ -54,12 +54,20 @@
 
 ```bash
 npm install --save-dev sb-codex-tool
+npm exec sb-codex-tool -- setup
 ```
 
 또는:
 
 ```bash
-npx sb-codex-tool setup
+npx sb-codex-tool@latest setup
+```
+
+public GitHub repository를 직접 설치해서 쓰려면:
+
+```bash
+npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git
+npm exec sb-codex-tool -- setup
 ```
 
 ## 처음 한 번만 하는 초기화

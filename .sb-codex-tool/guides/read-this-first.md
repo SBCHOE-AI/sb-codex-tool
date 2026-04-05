@@ -8,9 +8,9 @@ Read in this order before implementation or verification:
 2. .sb-codex-tool/state.md
 3. .sb-codex-tool/guides/read-this-first.md
 4. .sb-codex-tool/guides/code-consistency.md
-5. .sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md
-6. .sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md
-7. .sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md
+5. .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+6. .sb-codex-tool/plans/2026-04-05-public-release-approved.md
+7. .sb-codex-tool/guides/2026-04-05-public-release-scope.md
 
 ## Additional Repo Docs
 
@@ -22,14 +22,14 @@ Read in this order before implementation or verification:
 ## Current Cycle
 
 - Current stage: clarify
-- Latest approved plan: .sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md
-- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md
-- Latest lifecycle run: .sb-codex-tool/runs/2026-04-05-getting-started-manual-run.json
+- Latest approved plan: .sb-codex-tool/plans/2026-04-05-public-release-approved.md
+- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+- Latest lifecycle run: .sb-codex-tool/runs/2026-04-05-public-release-run.json
 - Latest consistency review: .sb-codex-tool/reviews/2026-04-05-consistency-review-flow-locke-consistency-review.md
 - Latest assignment lifecycle: none yet
-- Current task guide: .sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md
-- Current handoff: .sb-codex-tool/handoffs/2026-04-05-getting-started-manual-to-verification.md
-- Current review: .sb-codex-tool/reviews/2026-04-05-getting-started-manual-fresh-verification.md
+- Current task guide: .sb-codex-tool/guides/2026-04-05-public-release-scope.md
+- Current handoff: .sb-codex-tool/handoffs/2026-04-05-public-release-to-verification.md
+- Current review: .sb-codex-tool/reviews/2026-04-05-public-release-fresh-verification.md
 
 ## Default Ignore Guidance
 

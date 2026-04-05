@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "description": "Lightweight Codex workflow and runtime scaffold for general software projects.",
   "license": "UNLICENSED",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/SBCHOE-AI/sb-codex-tool.git"
@@ -14,7 +17,7 @@
   "type": "module",
   "files": [
     "bin",
-    "src",
+    "dist",
     "README.md"
   ],
   "keywords": [
@@ -27,13 +30,19 @@
     "sb-codex-tool": "./bin/sb-codex-tool.js"
   },
   "scripts": {
+    "build": "esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js",
+    "prepare": "npm run build",
+    "prepack": "npm run build",
     "start": "node --experimental-strip-types src/cli.ts",
     "setup:tool": "node --experimental-strip-types src/cli.ts setup",
     "doctor": "node --experimental-strip-types src/cli.ts doctor",
     "status": "node --experimental-strip-types src/cli.ts status",
     "test": "node --experimental-strip-types --test tests/*.test.ts",
     "pack:check": "npm pack --dry-run",
-    "release:check": "npm run test && npm run pack:check"
+    "release:check": "npm run build && npm run test && npm run pack:check"
+  },
+  "devDependencies": {
+    "esbuild": "^0.27.0"
   },
   "engines": {
     "node": ">=25.0.0"

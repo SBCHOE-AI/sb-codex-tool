@@ -4,10 +4,10 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
-const cliPath = path.resolve(here, '../src/cli.ts');
+const cliPath = path.resolve(here, '../dist/cli.js');
 const result = spawnSync(
   process.execPath,
-  ['--experimental-strip-types', cliPath, ...process.argv.slice(2)],
+  [cliPath, ...process.argv.slice(2)],
   { stdio: 'inherit' },
 );
 

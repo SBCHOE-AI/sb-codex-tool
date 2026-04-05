@@ -44,16 +44,24 @@ workflow/runtime scaffold입니다.
 
 ## 설치
 
-프로젝트에 로컬로 추가할 때:
+npm publish 이후 일회성으로 바로 실행할 때:
+
+```bash
+npx sb-codex-tool@latest setup
+```
+
+npm publish 이후 로컬에 설치해서 사용할 때:
 
 ```bash
 npm install --save-dev sb-codex-tool
+npm exec sb-codex-tool -- setup
 ```
 
-한 번만 실행할 때:
+public GitHub repository에서 로컬에 설치해서 사용할 때:
 
 ```bash
-npx sb-codex-tool setup
+npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git
+npm exec sb-codex-tool -- setup
 ```
 
 ## 빠른 시작
