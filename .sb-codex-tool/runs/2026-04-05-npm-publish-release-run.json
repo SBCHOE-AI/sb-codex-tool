@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-npm-publish-release",
+  "dateStamp": "2026-04-05",
+  "slug": "npm-publish-release",
+  "title": "npm Publish Release",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "dirty": true,
+    "changedFiles": [
+      "sb-codex-tool/guides/read-this-first.md",
+      "sb-codex-tool/index/current.json",
+      "sb-codex-tool/state.md",
+      "ackage.json",
+      "ests/distribution.test.ts",
+      ".sb-codex-tool/guides/2026-04-05-npm-publish-release-scope.md",
+      ".sb-codex-tool/handoffs/2026-04-05-npm-publish-release-to-verification.md",
+      ".sb-codex-tool/plans/2026-04-05-npm-publish-release-approved.md",
+      ".sb-codex-tool/reviews/2026-04-05-npm-publish-release-fresh-verification.md",
+      ".sb-codex-tool/runs/2026-04-05-npm-publish-release-run.json",
+      ".sb-codex-tool/summaries/2026-04-05-npm-publish-release-execution-summary.md"
+    ]
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-npm-publish-release-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-npm-publish-release-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-npm-publish-release-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-npm-publish-release-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-npm-publish-release-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-npm-publish-release-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-05T01:30:39.567Z",
+  "updatedAt": "2026-04-05T01:35:12.081Z",
+  "closedAt": "2026-04-05T01:35:12.081Z"
+}

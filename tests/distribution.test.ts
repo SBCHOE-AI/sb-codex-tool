@@ -40,7 +40,7 @@ test('package metadata is ready for npm distribution checks', () => {
     packageJson.bugs?.url,
     'https://github.com/SBCHOE-AI/sb-codex-tool/issues',
   );
-  assert.equal(packageJson.bin?.['sb-codex-tool'], './bin/sb-codex-tool.js');
+  assert.equal(packageJson.bin?.['sb-codex-tool'], 'bin/sb-codex-tool.js');
   assert.equal(
     packageJson.scripts?.['build'],
     'esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js',

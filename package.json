@@ -27,7 +27,7 @@
     "cli"
   ],
   "bin": {
-    "sb-codex-tool": "./bin/sb-codex-tool.js"
+    "sb-codex-tool": "bin/sb-codex-tool.js"
   },
   "scripts": {
     "build": "esbuild src/cli.ts --bundle --platform=node --format=esm --outfile=dist/cli.js",
