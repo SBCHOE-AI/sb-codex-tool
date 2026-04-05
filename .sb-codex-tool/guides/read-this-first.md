@@ -12,6 +12,14 @@ Read in this order before implementation or verification:
 6. .sb-codex-tool/plans/2026-04-05-npm-publish-release-approved.md
 7. .sb-codex-tool/guides/2026-04-05-npm-publish-release-scope.md
 
+## Default Operating Mode
+
+- Most users run `setup`, `doctor`, and `status` directly.
+- After that, ask Codex to read the hot path, clarify the task, and update
+  plans, summaries, handoffs, and state files in-session.
+- Use manual helper commands only when you explicitly want CLI-managed cycle
+  artifacts.
+
 ## Additional Repo Docs
 
 - docs/menu/implementation.md

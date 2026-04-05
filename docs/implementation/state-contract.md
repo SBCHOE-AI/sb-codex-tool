@@ -167,6 +167,12 @@ If a new convention is introduced, it must also update:
 
 - `.sb-codex-tool/guides/code-consistency.md`
 
+The state model must support both of these modes:
+
+- helper-command-driven lifecycle updates
+- Codex-first in-session updates after the human runs `setup`, `doctor`, and
+  `status`
+
 ## Code Consistency Guide Contract
 
 `code-consistency.md` must include:

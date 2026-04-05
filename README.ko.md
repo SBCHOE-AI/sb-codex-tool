@@ -66,36 +66,30 @@ npm exec sb-codex-tool -- setup
 
 ## 빠른 시작
 
-repository에 scaffold를 초기화합니다.
+대부분의 팀은 아래 세 명령만 직접 실행하면 됩니다.
 
 ```bash
-sb-codex-tool setup
+npm exec sb-codex-tool -- setup
+npm exec sb-codex-tool -- doctor
+npm exec sb-codex-tool -- status
 ```
 
-현재 scaffold와 운영 상태를 점검합니다.
+전역 설치를 썼다면 `npm exec` 없이 `sb-codex-tool`를 직접 호출해도 됩니다.
 
-```bash
-sb-codex-tool doctor
-sb-codex-tool status
+`status`까지 확인했으면 그다음부터는 `Codex-first mode`로 들어가면 됩니다.
+Codex에게 hot path를 읽고, 작업 목표와 제약을 물어본 뒤, plan/state/summary
+문서를 대신 정리해 달라고 요청하면 됩니다.
+
+예시 프롬프트:
+
+```text
+AGENTS.md와 sb-codex-tool hot path를 읽고 시작해줘. 작업 목표와 제약을
+먼저 물어본 뒤, plan, state, summary, verification note를 작업에 맞게 같이
+정리해줘.
 ```
 
-bounded work cycle을 시작합니다.
-
-```bash
-sb-codex-tool begin add-status-panel "Add Status Panel"
-```
-
-현재 cycle을 fresh verification 준비 상태로 올립니다.
-
-```bash
-sb-codex-tool prepare-verify
-```
-
-fresh verification agent가 verdict를 남긴 뒤 cycle을 닫습니다.
-
-```bash
-sb-codex-tool close
-```
+`begin`, `prepare-verify`, `close` 같은 helper 명령은 계속 남아 있지만,
+이제 기본 사용자 경로가 아니라 고급 수동 모드로 봅니다.
 
 ## `setup`이 만드는 것
 
@@ -123,18 +117,25 @@ AGENTS.md
 
 ## 명령어
 
+### 기본 사용자 명령
+
 | 명령 | 목적 |
 | --- | --- |
 | `sb-codex-tool setup` | scaffold, workflow 자산, 가이드, ignore 파일을 생성합니다. |
 | `sb-codex-tool doctor` | scaffold 무결성, 현재 cycle 준비도, semantic coherence를 검사합니다. |
 | `sb-codex-tool status` | 현재 stage, next action, hot path, 최신 run, semantic issue를 보여줍니다. |
+| `sb-codex-tool [codex args]` | 명시적 명령이 없으면 wrapper를 통해 Codex를 실행합니다. |
+
+### 고급 수동 helper 명령
+
+| 명령 | 목적 |
+| --- | --- |
 | `sb-codex-tool begin <slug> [title words]` | plan/summary/handoff/review artifact를 갖는 새 cycle을 엽니다. |
 | `sb-codex-tool prepare-verify` | 현재 cycle을 verify-ready 상태로 옮기고 handoff를 다시 씁니다. |
 | `sb-codex-tool close` | fresh verification verdict를 읽어 cycle을 최종 종료합니다. |
 | `sb-codex-tool assign <agent-name> <slug> [title words]` | subagent용 bounded assignment guide를 생성합니다. |
 | `sb-codex-tool complete-assignment <agent-name> <close\|clear\|replace> ...` | 완료된 subagent assignment의 lifecycle 처리를 기록합니다. |
 | `sb-codex-tool review-consistency <agent-name> [title words]` | active cycle에 대한 consistency review artifact를 생성합니다. |
-| `sb-codex-tool [codex args]` | 명시적 명령이 없으면 wrapper를 통해 Codex를 실행합니다. |
 
 ## 워크플로 모델
 
@@ -147,18 +148,25 @@ AGENTS.md
 5. `verify`
 
 최종 verification은 항상 fresh agent가 수행합니다. non-trivial 작업은
-일반적으로 `prepare-verify`를 거친 뒤 fresh verification을 수행하고, 마지막에
-`close`로 닫습니다.
+fresh verification과 verification summary/work journal 정리까지 포함하는
+closure 단계로 끝납니다.
 
-### 일반적인 cycle
+### 기본 Codex-first cycle
 
-1. `begin`으로 새 cycle을 엽니다.
-2. approved plan과 scope guide를 실제 작업 내용으로 채웁니다.
-3. 구현을 진행하고 execution summary를 갱신합니다.
-4. 단순성, 재사용성, 가독성을 기준으로 refactor합니다.
-5. `prepare-verify`를 실행해 handoff, state, verification 입력을 정렬합니다.
-6. fresh verification agent가 contract, hot path, 코드, 검증 명령을 독립적으로 확인합니다.
-7. fresh verifier가 verdict를 남긴 뒤 `close`를 실행합니다.
+1. `setup`, `doctor`, `status`를 실행합니다.
+2. Codex에게 hot path를 읽고 작업 목표와 제약을 질문하게 합니다.
+3. Codex가 approved plan과 state 문서를 직접 정리합니다.
+4. Codex가 구현과 execution summary 갱신을 진행합니다.
+5. Codex가 단순성, 재사용성, 가독성을 기준으로 refactor합니다.
+6. Codex가 verification-ready handoff와 next-agent guidance를 정리합니다.
+7. fresh verification agent가 contract, hot path, 코드, 검증 명령을 독립적으로 확인합니다.
+8. main Codex agent가 verification summary와 work journal을 정리합니다.
+
+### 고급 수동 cycle
+
+명시적인 lifecycle 명령을 선호하면 `begin`, `prepare-verify`, `close` 같은
+helper 명령을 계속 사용할 수 있습니다. 다만 이 경로는 기본 사용자 경로가
+아니라 advanced/manual 모드입니다.
 
 ## 상태 구조
 
@@ -199,6 +207,8 @@ hot-path onboarding은 다음 순서로 시작합니다.
 
 - orchestration을 소유합니다.
 - 사용자 진행 상황을 한국어로 보고합니다.
+- Codex-first mode에서는 plan, summary, handoff, review, work journal을
+  직접 갱신할 수 있습니다.
 - subagent에 bounded task를 배정합니다.
 - 최종 통합과 closure를 담당합니다.
 

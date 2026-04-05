@@ -81,7 +81,8 @@ export function createInitialCurrentIndex(): CurrentIndex {
   return {
     version: 2,
     currentStage: 'clarify',
-    nextAction: 'Review AGENTS.md and customize .sb-codex-tool/project.md.',
+    nextAction:
+      'Review AGENTS.md, run status if needed, and ask Codex to organize the first task.',
     latestApprovedPlan: null,
     latestRelevantSummary: null,
     latestRun: null,
@@ -111,6 +112,7 @@ export function createInitialCurrentIndex(): CurrentIndex {
     assignmentGuides: {},
     notes: [
       'Keep this file current enough for a fresh agent to start from the hot path.',
+      'Default usage is human setup/doctor/status plus Codex-managed plan, state, and summary updates.',
     ],
   };
 }
@@ -194,6 +196,14 @@ export function renderReadThisFirstMarkdown(
 Read in this order before implementation or verification:
 
 ${renderHotPath(current.hotPath)}
+
+## Default Operating Mode
+
+- Most users run \`setup\`, \`doctor\`, and \`status\` directly.
+- After that, ask Codex to read the hot path, clarify the task, and update
+  plans, summaries, handoffs, and state files in-session.
+- Use manual helper commands only when you want explicit CLI-managed cycle
+  artifacts.
 
 ## Additional Repo Docs
 

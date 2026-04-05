@@ -15,6 +15,9 @@
 - Follow the workflow defined in AGENTS.md.
 - Keep state inspectable through .sb-codex-tool/.
 - Optimize for reuse, readability, and low complexity.
+- Default human usage is `setup`, `doctor`, and `status`; after that, Codex can
+  manage plans, summaries, handoffs, reviews, and work-journal updates
+  directly.
 - Keep the v1 core general-purpose only.
 - Exclude Unity-specific behavior and all gstack-specific concepts.
 - Final closure must be performed by a fresh verification agent.
@@ -49,7 +52,8 @@
 - `bin/sb-codex-tool.js` is a thin executable wrapper that forwards to the
   TypeScript CLI through Node's strip-types runtime.
 - `src/cli.ts` is the top-level command router for `setup`, `doctor`,
-  `status`, helper lifecycle commands, and the default launch path.
+  `status`, advanced/manual helper lifecycle commands, and the default launch
+  path.
 - `src/commands/` contains thin command handlers.
 - `src/lib/templates.ts` is a thin public facade for scaffold-template helpers.
 - `src/lib/templates/context.ts` owns the shared template context discovery.

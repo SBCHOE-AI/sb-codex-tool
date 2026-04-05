@@ -23,9 +23,11 @@ test('Korean README exists and covers the main documentation surface', () => {
   assert.match(readmeKo, /## 빠른 시작/);
   assert.match(readmeKo, /## Agent 모델/);
   assert.match(readmeKo, /## Verification 모델/);
+  assert.match(readmeKo, /Codex-first mode/);
   assert.match(readmeKo, /sb-codex-tool setup/);
   assert.match(readmeKo, /sb-codex-tool doctor/);
   assert.match(readmeKo, /sb-codex-tool status/);
+  assert.match(readmeKo, /고급 수동 helper 명령/);
   assert.match(readmeKo, /prepare-verify/);
   assert.match(readmeKo, /npm run pack:check/);
   assert.match(readmeKo, /npm run release:check/);

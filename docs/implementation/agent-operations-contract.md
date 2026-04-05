@@ -27,6 +27,9 @@ The main agent must:
 - communicate progress periodically during longer work
 - assign bounded work to subagents when useful
 - record or update state when ownership changes
+- when helper commands are not used, gather task details in conversation and
+  update plans, summaries, handoffs, reviews, and work-journal entries
+  directly
 - finalize the human-facing work journal after verification
 
 Main-agent progress updates should include:

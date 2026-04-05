@@ -1,7 +1,7 @@
 {
   "version": 2,
   "currentStage": "clarify",
-  "nextAction": "Start the next implementation increment from a new approved plan.",
+  "nextAction": "Run `status` if needed, then ask Codex to clarify the next task and update the approved plan/state artifacts directly.",
   "latestApprovedPlan": ".sb-codex-tool/plans/2026-04-05-npm-publish-release-approved.md",
   "latestRelevantSummary": ".sb-codex-tool/summaries/2026-04-05-npm-publish-release-verification-summary.md",
   "latestRun": ".sb-codex-tool/runs/2026-04-05-npm-publish-release-run.json",
@@ -39,6 +39,7 @@
     "Current work cycle: npm Publish Release.",
     "The increment is closed with verdict pass.",
     "The next increment can start from a new approved plan.",
+    "Default usage is human setup/doctor/status plus Codex-managed plan, state, and summary updates.",
     "Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-npm-publish-release-execution-summary.md"
   ]
 }

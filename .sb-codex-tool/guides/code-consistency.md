@@ -5,6 +5,9 @@
 This file defines the structural consistency rules every new agent reads before
 implementation.
 
+It also serves as the main baseline when Codex is operating in Codex-first
+mode and updating plan, summary, handoff, and review artifacts directly.
+
 ## Architecture Style Summary
 
 - Prefer small modules with single responsibilities.

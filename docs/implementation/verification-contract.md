@@ -105,7 +105,9 @@ Check:
 - launch wrapper exists
 - `doctor` exists
 - `status` exists
+- `setup`, `doctor`, and `status` are documented as the default human workflow
 - any additional helper commands are explicitly documented in the contracts
+- documented helper commands are clearly marked advanced/manual when presented
 - documented helper commands behave according to their contracts
 
 Evidence:
@@ -126,6 +128,8 @@ Failure if:
 - a required command exists but does not fulfill its contract
 - a documented helper command exists in help but is not actually wired or
   leaves current-state artifacts inconsistent
+- helper commands are presented as required everyday startup steps instead of
+  advanced/manual helpers
 - doctor and status disagree about obvious current-state drift that should be
   visible from the latest run and assignment ownership
 
@@ -178,6 +182,8 @@ Check:
 - all required directories and files exist
 - hot path is clearly separable from cold path
 - next-agent guidance is explicit
+- Codex can operate by updating state artifacts directly after the human runs
+  `setup`, `doctor`, and `status`
 - work journal is separated from agent continuity state
 
 Evidence:

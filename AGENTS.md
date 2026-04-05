@@ -19,6 +19,8 @@ verification-friendly.
 
 - The main agent owns orchestration and user communication.
 - Main-agent progress updates to the user are always in Korean.
+- Most users run `setup`, `doctor`, and `status` directly, then let Codex
+  update plans, state, summaries, handoffs, and reviews in-session.
 - Subagents are bounded workers and must be reset or replaced after completion.
 - Every new implementation agent reads `.sb-codex-tool/guides/code-consistency.md` first.
 - The main agent references `.sb-codex-tool/guides/code-consistency.md` before assigning new work.
@@ -44,6 +46,8 @@ verification-friendly.
 
 - Hot path starts with `.sb-codex-tool/project.md` and `.sb-codex-tool/state.md`.
 - Update next-agent guidance after non-trivial code changes.
+- Codex may create or update plan, summary, handoff, and review artifacts
+  directly when the repo is operating in Codex-first mode.
 - If new conventions are introduced, update `.sb-codex-tool/guides/code-consistency.md`.
 
 ## Work Journal Rules

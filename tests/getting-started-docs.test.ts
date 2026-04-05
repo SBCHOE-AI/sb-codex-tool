@@ -41,10 +41,10 @@ test('detailed beginner guide includes ordered steps and examples', () => {
   assert.match(guide, /## 시작 전에 준비할 것/);
   assert.match(guide, /## 처음 작업할 때 권장 순서/);
   assert.match(guide, /## 명령 순서 예시/);
-  assert.match(guide, /sb-codex-tool setup/);
-  assert.match(guide, /sb-codex-tool begin add-status-panel "Add Status Panel"/);
-  assert.match(guide, /sb-codex-tool prepare-verify/);
-  assert.match(guide, /sb-codex-tool close/);
+  assert.match(guide, /npm exec sb-codex-tool -- setup/);
+  assert.match(guide, /AGENTS\.md와 \.sb-codex-tool\/project\.md, state\.md, read-this-first\.md,/);
+  assert.match(guide, /기본 모드는 `setup`, `doctor`, `status`까지만 사람이 실행하고/);
   assert.match(guide, /## 가장 간단한 end-to-end 예시/);
+  assert.match(guide, /## 고급 수동 모드는 언제 쓰는가/);
   assert.match(guide, /## 자주 하는 실수/);
 });

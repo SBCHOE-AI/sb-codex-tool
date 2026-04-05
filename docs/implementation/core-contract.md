@@ -54,6 +54,20 @@ Supported launch modes:
 - repo-local install
 - `npx sb-codex-tool`
 
+## Default Operating Mode
+
+The default human-facing workflow is:
+
+- `sb-codex-tool setup`
+- `sb-codex-tool doctor`
+- `sb-codex-tool status`
+
+After `status`, Codex is expected to gather task context in-session and update
+plans, summaries, handoffs, reviews, and current-state artifacts directly.
+
+The helper commands below remain supported, but they are advanced/manual
+helpers rather than the default user path.
+
 ## Required CLI Surface
 
 The v1 core must provide these commands:
@@ -114,7 +128,7 @@ Must:
 - show latest lifecycle-run phase, verdict, and linked artifact paths when a
   run record is available
 
-## Documented Helper CLI Surface
+## Advanced/Manual Helper CLI Surface
 
 The v1 core may also provide small documented helper commands when they improve
 verification-friendly lifecycle management without expanding into a large
@@ -128,6 +142,9 @@ Currently documented helper commands are:
 - `sb-codex-tool complete-assignment <agent-name> <close|clear|replace> [replacement-agent] [replacement-slug] [title words]`
 - `sb-codex-tool prepare-verify`
 - `sb-codex-tool review-consistency <agent-name> [title words]`
+
+These commands must be documented as optional manual helpers, not as the only
+way ordinary users can make progress.
 
 ### `assign`
 

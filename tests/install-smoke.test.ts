@@ -11,6 +11,10 @@ function run(command: string, args: string[], cwd: string) {
   return spawnSync(command, args, {
     cwd,
     encoding: 'utf8',
+    env: {
+      ...process.env,
+      npm_config_cache: path.join(cwd, '.npm-cache'),
+    },
   });
 }
 

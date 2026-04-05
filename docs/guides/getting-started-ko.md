@@ -13,11 +13,10 @@
 
 1. scaffold 초기화
 2. 현재 상태 점검
-3. 새 work cycle 시작
-4. plan과 scope 채우기
-5. 구현 후 verification 준비
-6. fresh verification 거치기
-7. cycle 종료
+3. Codex에게 작업 목표와 제약을 정리하게 하기
+4. Codex와 함께 plan/state 문서 갱신하기
+5. 구현 후 fresh verification 거치기
+6. verification summary와 work journal 정리하기
 
 ## 먼저 이해해야 할 핵심 개념
 
@@ -75,7 +74,7 @@ npm exec sb-codex-tool -- setup
 repository 루트에서 아래를 실행합니다.
 
 ```bash
-sb-codex-tool setup
+npm exec sb-codex-tool -- setup
 ```
 
 이 명령은 다음을 만듭니다.
@@ -90,8 +89,8 @@ sb-codex-tool setup
 초기화 직후에는 아래 두 명령으로 상태를 확인합니다.
 
 ```bash
-sb-codex-tool doctor
-sb-codex-tool status
+npm exec sb-codex-tool -- doctor
+npm exec sb-codex-tool -- status
 ```
 
 ### 이 시점에 확인할 것
@@ -105,23 +104,23 @@ sb-codex-tool status
 실제 작업은 항상 아래 순서를 권장합니다.
 
 1. `status`로 현재 상태 확인
-2. `begin`으로 새 cycle 시작
-3. plan과 scope guide 채우기
-4. 구현
-5. execution summary 갱신
-6. refactor
-7. `prepare-verify`
-8. fresh verification
-9. `close`
+2. Codex에게 hot path를 읽게 하고 작업 목표/제약을 질문하게 함
+3. Codex가 approved plan과 state 문서를 정리
+4. Codex가 구현과 execution summary 갱신
+5. Codex가 refactor와 next-agent guidance 정리
+6. fresh verification
+7. Codex가 verification summary와 work journal 정리
 
-이 순서를 건너뛰면 나중에 fresh verification이나 handoff에서 막힙니다.
+즉 사용자가 매번 `begin`, `prepare-verify`, `close`를 직접 칠 필요는
+없습니다. 기본 모드는 `setup`, `doctor`, `status`까지만 사람이 실행하고,
+나머지는 Codex가 문서를 직접 유지하는 방식입니다.
 
 ## 명령 순서 예시
 
 ### 1. 현재 상태 확인
 
 ```bash
-sb-codex-tool status
+npm exec sb-codex-tool -- status
 ```
 
 여기서 봐야 하는 것은 다음입니다.
@@ -133,43 +132,42 @@ sb-codex-tool status
 
 아직 시작 전이면 보통 `clarify` 단계일 것입니다.
 
-### 2. 새 작업 열기
+### 2. Codex에게 첫 작업을 맡기기
 
-예를 들어 “상태 패널 추가” 작업을 시작한다고 가정하면:
+예를 들어 “상태 패널 추가” 작업을 시작한다고 가정하면, Codex에게 이렇게
+말하면 됩니다.
 
-```bash
-sb-codex-tool begin add-status-panel "Add Status Panel"
+```text
+AGENTS.md와 .sb-codex-tool/project.md, state.md, read-this-first.md,
+code-consistency.md를 읽고 시작해줘.
+
+지금 작업은 "상태 패널 추가"야.
+먼저 필요한 질문을 해 주고, 답을 받은 뒤 approved plan과 state 문서를
+정리해줘. 이후 구현, refactor, verification 준비 문서도 계속 업데이트해줘.
 ```
 
-그러면 다음 artifact가 만들어집니다.
+Codex가 보통 먼저 정리해야 하는 것은 다음입니다.
 
 - approved plan
-- execution summary
-- handoff
-- fresh verification review
-- scope guide
-- run record
+- current state
+- read-this-first 안내
+- execution summary 초안
+- verification에 필요한 next-agent guidance
 
-### 3. plan과 scope 채우기
+### 3. Codex가 plan과 state를 정리할 때 확인할 것
 
-`begin` 직후에는 placeholder가 있으므로 바로 구현하면 안 됩니다.
-
-먼저 아래 파일을 채워야 합니다.
-
-- `.sb-codex-tool/plans/...-approved.md`
-- `.sb-codex-tool/guides/...-scope.md`
-
-여기에는 최소한 아래가 들어가야 합니다.
+Codex가 문서를 채울 때 아래 항목이 빠지지 않는지 확인하면 됩니다.
 
 - objective
 - acceptance criteria
 - boundaries
 - task별 `files / action / verify / done`
 - verification expectations
+- next-agent guidance
 
 ### 4. 구현하기
 
-이제 실제 코드 작업을 합니다.
+이제 Codex가 실제 코드 작업을 진행합니다.
 
 작업 중에는 가능하면 아래 원칙을 지킵니다.
 
@@ -180,7 +178,7 @@ sb-codex-tool begin add-status-panel "Add Status Panel"
 
 ### 5. execution summary 갱신하기
 
-구현이 진행되면 execution summary를 실제 내용으로 바꿉니다.
+구현이 진행되면 Codex가 execution summary를 실제 내용으로 바꿉니다.
 
 특히 다음 섹션을 placeholder 없이 채워야 합니다.
 
@@ -206,26 +204,22 @@ refactor에서 목표로 하는 것은 다음입니다.
 
 ## fresh verification 준비하기
 
-구현과 refactor가 끝났으면 다음을 실행합니다.
-
-```bash
-sb-codex-tool prepare-verify
-```
-
-이 명령은 보통 다음을 갱신합니다.
+Codex-first 기본 경로에서는 사용자가 `prepare-verify`를 직접 실행하지 않아도
+됩니다. 대신 Codex가 아래를 정리해야 합니다.
 
 - current state
 - read-this-first
+- verification scope
 - handoff
-- latest run
+- latest summary
 
-이제 stage는 `verify`가 되어야 합니다.
-
-확인:
+필요하면 상태만 다시 확인합니다.
 
 ```bash
-sb-codex-tool status
+npm exec sb-codex-tool -- status
 ```
+
+이제 stage는 `verify`가 되어 있어야 합니다.
 
 ## fresh verification은 왜 필요한가
 
@@ -254,18 +248,13 @@ fresh verification agent는 보통 다음을 봅니다.
 
 ## verification 이후 종료하기
 
-fresh verification agent가 review 파일에 verdict를 남기면:
-
-```bash
-sb-codex-tool close
-```
-
-이 명령은 보통 아래를 만듭니다.
+fresh verification agent가 review나 summary에 verdict를 남기면, main Codex
+agent가 아래를 정리합니다.
 
 - verification summary
 - work journal entry
-- updated run record
 - updated current state
+- next action for the next task
 
 정상적으로 끝나면 stage는 다시 `clarify`로 돌아갑니다.
 
@@ -276,23 +265,28 @@ sb-codex-tool close
 ### 1. 초기화
 
 ```bash
-sb-codex-tool setup
-sb-codex-tool doctor
-sb-codex-tool status
+npm exec sb-codex-tool -- setup
+npm exec sb-codex-tool -- doctor
+npm exec sb-codex-tool -- status
 ```
 
-### 2. 작업 시작
+### 2. Codex에게 작업 시작 요청
 
-```bash
-sb-codex-tool begin add-help-text "Add Help Text"
+```text
+AGENTS.md와 sb-codex-tool hot path를 읽고 작업 준비를 해줘.
+
+작업 목표는 "help text 추가"야.
+먼저 필요한 질문을 하고, 답을 바탕으로 approved plan과 state 문서를 정리해줘.
 ```
 
-### 3. plan과 scope 작성
+### 3. Codex가 문서를 정리하면 확인
 
-다음 파일을 채웁니다.
+Codex가 아래 파일들을 정리했는지 확인합니다.
 
-- `.sb-codex-tool/plans/...-approved.md`
-- `.sb-codex-tool/guides/...-scope.md`
+- `.sb-codex-tool/plans/...-approved.md` 또는 현재 approved plan
+- `.sb-codex-tool/state.md`
+- `.sb-codex-tool/guides/read-this-first.md`
+- 최신 execution summary 초안
 
 예를 들어 plan task는 이렇게 쓸 수 있습니다.
 
@@ -308,13 +302,15 @@ sb-codex-tool begin add-help-text "Add Help Text"
 - 코드 수정
 - 테스트 실행
 - execution summary 업데이트
+- next-agent guidance 업데이트
 
-### 5. verification 준비
+### 5. verification 준비와 확인
 
 ```bash
-sb-codex-tool prepare-verify
-sb-codex-tool status
+npm exec sb-codex-tool -- status
 ```
+
+이 시점에는 Codex가 verification-ready 상태 문서를 정리해 둬야 합니다.
 
 ### 6. fresh verification
 
@@ -322,10 +318,10 @@ sb-codex-tool status
 
 ### 7. 종료
 
-```bash
-sb-codex-tool close
-sb-codex-tool status
-```
+- main Codex agent가 verification summary 작성
+- work journal 작성
+- `state.md`를 다음 작업 기준으로 갱신
+- 필요하면 마지막으로 `status` 확인
 
 ## subagent는 언제 쓰는가
 
@@ -356,11 +352,11 @@ sb-codex-tool complete-assignment euclid close
 문제:
 
 - plan과 scope에 placeholder가 남음
-- `doctor`와 `prepare-verify`에서 막힘
+- fresh verification에서 막힘
 
 해결:
 
-- approved plan과 scope guide를 먼저 실제 내용으로 채웁니다.
+- Codex가 approved plan과 state 문서를 먼저 정리하게 합니다.
 
 ### 2. execution summary를 나중으로 미룸
 
@@ -380,7 +376,8 @@ sb-codex-tool complete-assignment euclid close
 
 해결:
 
-- 반드시 fresh verification agent가 review를 남긴 뒤 `close`합니다.
+- 반드시 fresh verification agent가 review를 남긴 뒤 main Codex agent가
+  summary와 work journal을 정리합니다.
 
 ### 4. work journal을 상태 파일처럼 쓰려 함
 
@@ -396,10 +393,27 @@ sb-codex-tool complete-assignment euclid close
 ## 처음 쓰는 사람에게 추천하는 습관
 
 - 매번 `status`부터 본다
-- 큰 작업은 `begin`으로 cycle을 열고 시작한다
-- summary와 handoff를 미루지 않는다
+- 큰 작업은 Codex가 먼저 plan과 state를 정리하게 한다
+- summary와 handoff 정리를 미루지 않는다
 - verification 전에 `doctor`를 돌린다
 - fresh verification을 생략하지 않는다
+
+## 고급 수동 모드는 언제 쓰는가
+
+기본 경로는 Codex-first 모드입니다. 다만 아래 경우에는 helper 명령이 유용할
+수 있습니다.
+
+- CLI가 cycle artifact를 먼저 만들어 주길 원한다
+- 팀이 `begin -> prepare-verify -> close` 형태를 명시적으로 유지하고 싶다
+- bounded assignment나 consistency review artifact를 수동으로 분리하고 싶다
+
+이때는 다음 helper를 사용할 수 있습니다.
+
+- `sb-codex-tool begin`
+- `sb-codex-tool prepare-verify`
+- `sb-codex-tool close`
+- `sb-codex-tool assign`
+- `sb-codex-tool review-consistency`
 
 ## 다음에 읽으면 좋은 문서
 

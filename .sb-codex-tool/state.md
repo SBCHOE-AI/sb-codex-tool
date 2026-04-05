@@ -6,7 +6,8 @@
 
 ## One Next Action
 
-- Start the next implementation increment from a new approved plan.
+- Run `status` if needed, then ask Codex to clarify the next task and update
+  the approved plan/state artifacts directly.
 
 ## Current Focus Modules
 

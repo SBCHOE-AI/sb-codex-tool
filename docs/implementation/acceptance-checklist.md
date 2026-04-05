@@ -22,7 +22,9 @@ If any required item below fails, the verdict cannot be `pass`.
 - [ ] `sb-codex-tool` launch wrapper exists
 - [ ] `sb-codex-tool doctor` exists
 - [ ] `sb-codex-tool status` exists
+- [ ] `setup`, `doctor`, and `status` are documented as the default human workflow
 - [ ] Documented helper commands exist and match their contracts
+- [ ] Helper commands are documented as advanced/manual rather than the default path
 - [ ] status can surface latest run details when a lifecycle run exists
 - [ ] status can surface active assignment guides and the latest assignment lifecycle
 - [ ] status can surface semantic issues when current-state coherence drifts

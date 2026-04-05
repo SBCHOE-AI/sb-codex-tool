@@ -25,6 +25,8 @@ verification-friendly.
 
 - The main agent owns orchestration and user communication.
 - Main-agent progress updates to the user are always in Korean.
+- Most users run \`setup\`, \`doctor\`, and \`status\` directly, then let Codex
+  update plans, state, summaries, handoffs, and reviews in-session.
 - Subagents are bounded workers and must be reset or replaced after completion.
 - Every new implementation agent reads \`${STATE_ROOT_NAME}/guides/code-consistency.md\` first.
 - The main agent references \`${STATE_ROOT_NAME}/guides/code-consistency.md\` before assigning new work.
@@ -50,6 +52,8 @@ verification-friendly.
 
 - Hot path starts with \`${STATE_ROOT_NAME}/project.md\` and \`${STATE_ROOT_NAME}/state.md\`.
 - Update next-agent guidance after non-trivial code changes.
+- Codex may create or update plan, summary, handoff, and review artifacts
+  directly when the team is operating in Codex-first mode.
 - If new conventions are introduced, update \`${STATE_ROOT_NAME}/guides/code-consistency.md\`.
 
 ## Work Journal Rules
@@ -84,6 +88,8 @@ function projectTemplate(context: TemplateContext): string {
 - Follow the workflow defined in AGENTS.md.
 - Keep state inspectable through ${STATE_ROOT_NAME}/.
 - Optimize for reuse, readability, and low complexity.
+- Most users will run \`setup\`, \`doctor\`, and \`status\` directly, then let
+  Codex maintain plans, summaries, handoffs, and reviews during normal work.
 
 ## Important Entrypoints
 

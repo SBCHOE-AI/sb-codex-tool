@@ -7,8 +7,8 @@
 
 핵심 목표는 다음 두 가지입니다.
 
-- 어떤 순서로 명령을 실행해야 하는지 바로 이해하기
-- 실제 예시를 보고 첫 work cycle을 혼자 열고 닫아 보기
+- 사람이 직접 실행할 최소 명령이 무엇인지 바로 이해하기
+- 그다음 작업은 Codex와 어떻게 같이 진행하는지 빠르게 익히기
 
 ## Recommended Reading Order
 
@@ -22,15 +22,17 @@
 
 ### 5-minute path
 
-- `sb-codex-tool setup`
-- `sb-codex-tool doctor`
-- `sb-codex-tool status`
+- `npm exec sb-codex-tool -- setup`
+- `npm exec sb-codex-tool -- doctor`
+- `npm exec sb-codex-tool -- status`
 - [Detailed Beginner Guide](../guides/getting-started-ko.md)
 
 ### If you are about to do real work
 
 - [Detailed Beginner Guide](../guides/getting-started-ko.md)
 - `AGENTS.md`
+- `.sb-codex-tool/project.md`
+- `.sb-codex-tool/state.md`
 - `.sb-codex-tool/guides/code-consistency.md`
 
 ## Scope
@@ -40,9 +42,10 @@
 대신 아래를 설명합니다.
 
 - 준비물
-- 추천 작업 순서
-- cycle을 여는 방법
+- 기본 사용자 명령
+- Codex-first 운영 방식
 - fresh verification을 거치는 방법
+- 고급 수동 helper를 언제 쓰는지
 - 자주 하는 실수
 
 구현 계약과 세부 내부 규칙이 필요하면 다음 문서를 봅니다.

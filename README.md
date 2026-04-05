@@ -67,36 +67,31 @@ npm exec sb-codex-tool -- setup
 
 ## Quick Start
 
-Initialize the scaffold in a repository:
+Most teams only need three direct commands:
 
 ```bash
-sb-codex-tool setup
+npm exec sb-codex-tool -- setup
+npm exec sb-codex-tool -- doctor
+npm exec sb-codex-tool -- status
 ```
 
-Inspect the scaffold and operational state:
+If you installed the package globally, you can drop `npm exec` and call
+`sb-codex-tool` directly.
 
-```bash
-sb-codex-tool doctor
-sb-codex-tool status
+After `status`, switch into Codex-first mode. Ask Codex to read the hot path,
+ask for the task goal and constraints, and maintain the remaining plan/state
+artifacts for you.
+
+Example prompt:
+
+```text
+Read AGENTS.md and the sb-codex-tool hot path. Ask me for the task goal and
+constraints, then update the plan, state, summaries, and verification notes as
+we work.
 ```
 
-Start a bounded work cycle:
-
-```bash
-sb-codex-tool begin add-status-panel "Add Status Panel"
-```
-
-Prepare the current cycle for fresh verification:
-
-```bash
-sb-codex-tool prepare-verify
-```
-
-Close the cycle after a fresh verification agent records a verdict:
-
-```bash
-sb-codex-tool close
-```
+The manual helper commands still exist, but they are now the advanced/manual
+path rather than the default human workflow.
 
 ## What `setup` Creates
 
@@ -124,18 +119,25 @@ onboarding, fresh verification, and human-readable work journaling.
 
 ## Commands
 
+### Default human workflow
+
 | Command | Purpose |
 | --- | --- |
 | `sb-codex-tool setup` | Create the scaffold, workflow assets, guides, and ignore files. |
 | `sb-codex-tool doctor` | Validate scaffold integrity, current-cycle readiness, and semantic coherence. |
 | `sb-codex-tool status` | Show the current stage, next action, hot path, latest run details, and semantic issues. |
+| `sb-codex-tool [codex args]` | Launch Codex through the wrapper when no explicit command is given. |
+
+### Advanced/manual helpers
+
+| Command | Purpose |
+| --- | --- |
 | `sb-codex-tool begin <slug> [title words]` | Open a new bounded work cycle with plan/summary/handoff/review artifacts. |
 | `sb-codex-tool prepare-verify` | Move the current cycle into verify-ready state and rewrite the handoff. |
 | `sb-codex-tool close` | Finalize the current cycle from the recorded fresh verification verdict. |
 | `sb-codex-tool assign <agent-name> <slug> [title words]` | Create a bounded assignment guide for a subagent. |
 | `sb-codex-tool complete-assignment <agent-name> <close\|clear\|replace> ...` | Record lifecycle handling for a completed subagent assignment. |
 | `sb-codex-tool review-consistency <agent-name> [title words]` | Write a bounded consistency review artifact for the active cycle. |
-| `sb-codex-tool [codex args]` | Launch Codex through the wrapper when no explicit command is given. |
 
 ## Workflow Model
 
@@ -148,18 +150,27 @@ onboarding, fresh verification, and human-readable work journaling.
 5. `verify`
 
 Final verification is always fresh-agent-only. Non-trivial work is expected to
-end with `prepare-verify` and then a fresh verification pass before `close`.
+end with fresh verification and a recorded closure summary.
 
-### Typical Cycle
+### Typical Codex-first cycle
 
-1. Run `begin` to open a new cycle.
-2. Fill the approved plan and scope guide with real work.
-3. Implement the change and update the execution summary.
-4. Refactor for simplicity, reuse, and readability.
-5. Run `prepare-verify` to align handoff, state, and verification inputs.
+1. Run `setup`, `doctor`, and `status`.
+2. Ask Codex to read the hot path, clarify the task, and write or update the
+   approved plan and state files.
+3. Let Codex implement the change and keep the execution summary current.
+4. Let Codex refactor for simplicity, reuse, and readability.
+5. Let Codex prepare a verification-ready handoff and next-agent guidance.
 6. Have a fresh verification agent inspect the contracts, hot path, code, and
    checks.
-7. Run `close` after the fresh verifier records a verdict.
+7. Let the main Codex agent record the verification summary and update the
+   human work journal.
+
+### Manual helper mode
+
+If you prefer explicit lifecycle commands, `begin`, `prepare-verify`, `close`,
+`assign`, and the other helper commands are still available. They are useful
+for teams that want CLI-created cycle artifacts instead of asking Codex to
+write those files directly.
 
 ## State Layout
 
@@ -200,6 +211,8 @@ Hot-path onboarding starts with:
 
 - Owns orchestration
 - Reports progress to the user in Korean
+- Can update plans, summaries, handoffs, reviews, and work-journal entries
+  directly when operating in Codex-first mode
 - Assigns bounded work to subagents
 - Integrates and closes work
 

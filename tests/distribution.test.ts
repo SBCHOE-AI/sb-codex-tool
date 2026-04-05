@@ -69,6 +69,9 @@ test('README documents install, workflow, and packaging checks', () => {
     readme,
     /npm install --save-dev git\+https:\/\/github\.com\/SBCHOE-AI\/sb-codex-tool\.git/,
   );
+  assert.match(readme, /Default human workflow/);
+  assert.match(readme, /Advanced\/manual helpers/);
+  assert.match(readme, /Codex-first mode/);
   assert.match(readme, /sb-codex-tool setup/);
   assert.match(readme, /sb-codex-tool doctor/);
   assert.match(readme, /sb-codex-tool status/);
@@ -81,6 +84,10 @@ test('npm pack dry-run stays focused on the distribution surface', () => {
   const result = spawnSync('npm', ['pack', '--dry-run'], {
     cwd: root,
     encoding: 'utf8',
+    env: {
+      ...process.env,
+      npm_config_cache: path.join(root, '.tmp-npm-cache'),
+    },
   });
 
   assert.equal(result.status, 0, result.stderr || result.stdout);
