@@ -37,7 +37,7 @@ workflow/runtime scaffold입니다.
 
 ## 요구 사항
 
-- Node.js 25 이상
+- Node.js 24 이상
 - Codex가 working tree를 읽고 쓸 수 있는 프로젝트
 - 기본 launch wrapper를 쓸 경우 `codex` 바이너리
 - 명시적 상태, handoff, verification artifact가 필요한 작업 방식

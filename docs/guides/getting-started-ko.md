@@ -44,7 +44,7 @@
 
 ### 필수 준비물
 
-- Node.js 25 이상
+- Node.js 24 이상
 - `codex` 바이너리
 - git repository
 - `sb-codex-tool` 설치

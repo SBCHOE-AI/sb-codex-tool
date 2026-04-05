@@ -37,7 +37,7 @@ work more repeatable inside a normal repository.
 
 ## Requirements
 
-- Node.js 25 or newer
+- Node.js 24 or newer
 - A project where Codex can read and write the working tree
 - A `codex` binary available when using the default launch wrapper
 - A workflow that benefits from explicit state, handoff, and verification
