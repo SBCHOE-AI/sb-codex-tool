@@ -17,7 +17,9 @@
 
 - README.md
 - README.ko.md
+- docs/guides/getting-started-ko.md
 - package.json
+- package-lock.json
 - bin/sb-codex-tool.js
 - tests/distribution.test.ts
 - tests/install-smoke.test.ts
@@ -41,6 +43,9 @@
 - Run `node --experimental-strip-types --test tests/install-smoke.test.ts`.
 - Run `node --experimental-strip-types --test tests/*.test.ts`.
 - Run `node --experimental-strip-types src/cli.ts doctor`.
+- Confirm `npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git`
+  followed by `npm exec sb-codex-tool -- setup` succeeds in a fresh temporary
+  project.
 - Confirm the repository visibility is `PUBLIC`.
 - Confirm the READMEs explain direct GitHub installation.
 - If npm publish succeeds, confirm `npm view sb-codex-tool version

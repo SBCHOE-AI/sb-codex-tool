@@ -8,7 +8,7 @@ Read in this order before implementation or verification:
 2. .sb-codex-tool/state.md
 3. .sb-codex-tool/guides/read-this-first.md
 4. .sb-codex-tool/guides/code-consistency.md
-5. .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+5. .sb-codex-tool/summaries/2026-04-05-public-release-verification-summary.md
 6. .sb-codex-tool/plans/2026-04-05-public-release-approved.md
 7. .sb-codex-tool/guides/2026-04-05-public-release-scope.md
 
@@ -23,7 +23,7 @@ Read in this order before implementation or verification:
 
 - Current stage: clarify
 - Latest approved plan: .sb-codex-tool/plans/2026-04-05-public-release-approved.md
-- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-verification-summary.md
 - Latest lifecycle run: .sb-codex-tool/runs/2026-04-05-public-release-run.json
 - Latest consistency review: .sb-codex-tool/reviews/2026-04-05-consistency-review-flow-locke-consistency-review.md
 - Latest assignment lifecycle: none yet

@@ -6,23 +6,22 @@
 
 ## One Next Action
 
-- Fill in .sb-codex-tool/plans/2026-04-05-public-release-approved.md and narrow .sb-codex-tool/guides/2026-04-05-public-release-scope.md before implementation starts.
+- Start the next implementation increment from a new approved plan.
 
 ## Current Focus Modules
 
 - AGENTS.md
 - .sb-codex-tool/guides/code-consistency.md
+- .sb-codex-tool/summaries/2026-04-05-public-release-verification-summary.md
 - .sb-codex-tool/runs/2026-04-05-public-release-run.json
-- .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+- .sb-codex-tool/reviews/2026-04-05-public-release-fresh-verification.md
 - .sb-codex-tool/plans/2026-04-05-public-release-approved.md
 - .sb-codex-tool/guides/2026-04-05-public-release-scope.md
-- .sb-codex-tool/handoffs/2026-04-05-public-release-to-verification.md
-- .sb-codex-tool/reviews/2026-04-05-public-release-fresh-verification.md
 
 ## References
 
 - Latest approved plan: .sb-codex-tool/plans/2026-04-05-public-release-approved.md
-- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md
+- Latest relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-verification-summary.md
 - Latest lifecycle run: .sb-codex-tool/runs/2026-04-05-public-release-run.json
 - Latest consistency review: .sb-codex-tool/reviews/2026-04-05-consistency-review-flow-locke-consistency-review.md
 - Latest assignment lifecycle: none yet
@@ -44,5 +43,6 @@
 ## Notes
 
 - Current work cycle: Public Repo and npm Release.
-- Fill in the approved plan and scope guide before implementation starts.
-- Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md
+- The increment is closed with verdict pass_with_concerns.
+- The next increment can start from a new approved plan.
+- Previous relevant summary: .sb-codex-tool/summaries/2026-04-05-public-release-execution-summary.md

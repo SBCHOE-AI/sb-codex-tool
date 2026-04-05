@@ -6,7 +6,7 @@
 
 ## Verdict
 
-- pending
+- pass_with_concerns
 
 ## Required Checks
 
@@ -18,20 +18,31 @@
 
 ## Checks Run
 
-- Add the checks run during the fresh verification pass.
+- `gh repo view --json nameWithOwner,visibility,url`
+- `npm whoami`
+- `npm view sb-codex-tool version dist-tags.latest --json`
+- `node --experimental-strip-types --test tests/distribution.test.ts`
+- `node --experimental-strip-types --test tests/install-smoke.test.ts`
+- `node --experimental-strip-types --test tests/*.test.ts`
+- `node --experimental-strip-types src/cli.ts doctor`
+- `node --experimental-strip-types src/cli.ts status`
+- `npm pack --dry-run`
+- Fresh temp install: `npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git` followed by `npm exec sb-codex-tool -- setup`
 
 ## Findings
 
-- Add findings here in severity order.
+- None.
 
 ## Concerns
 
-- Add non-blocking concerns here.
+- `npm whoami` returned `ENEEDAUTH`, so npm publication remains blocked on this machine.
+- `npm view sb-codex-tool version dist-tags.latest --json` returned `E404`, which matches the current unpublished npm state.
+- This is non-blocking for the cycle because the repository is public, the public GitHub install path works, and the blocker is explicitly captured in the cycle artifacts.
 
 ## Missing Evidence
 
-- Add any blocked evidence here.
+- None.
 
 ## Work Journal Decision
 
-- Record whether verified closure is complete enough to update the work journal.
+- Verified closure is complete enough to update the work journal.

@@ -23,8 +23,11 @@
 - Added a build pipeline with `esbuild`, `prepare`, and `prepack`.
 - Added `tests/install-smoke.test.ts` so a packed install can run
   `npx sb-codex-tool setup` from `node_modules`.
-- Confirmed that direct install from the now-public GitHub repository works in
-  a temporary project.
+- Updated the installation docs so published installs can use
+  `npx sb-codex-tool@latest setup` while GitHub installs use
+  `npm exec sb-codex-tool -- setup`.
+- Pushed the packaged-runtime fix to `main` and confirmed that direct install
+  from the now-public GitHub repository works in a temporary project.
 - Confirmed that npm publish is still blocked on this machine because npm auth
   is missing.
 
@@ -35,16 +38,20 @@
 - `node --experimental-strip-types --test tests/install-smoke.test.ts`
 - `node --experimental-strip-types --test tests/distribution.test.ts`
 - `node --experimental-strip-types --test tests/*.test.ts`
+- `npm run release:check`
 - `node --experimental-strip-types src/cli.ts doctor`
 - `npm pack --dry-run`
-- `npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git`
-- `cd /tmp/sb-codex-tool-git-install && npx sb-codex-tool setup`
+- `git push origin main`
+- `cd /tmp/sb-codex-tool-git-install && npm install --save-dev git+https://github.com/SBCHOE-AI/sb-codex-tool.git`
+- `cd /tmp/sb-codex-tool-git-install && npm exec sb-codex-tool -- setup`
 
 ## Plan vs Actual
 
 - Planned: make direct GitHub installation possible from another machine.
-- Actual: the repo is now public and a temporary project successfully installed
-  from `git+https://github.com/SBCHOE-AI/sb-codex-tool.git`.
+- Actual: the repo is now public, the runtime fix is pushed to `main`, and a
+  temporary project successfully installed from
+  `git+https://github.com/SBCHOE-AI/sb-codex-tool.git` and ran
+  `npm exec sb-codex-tool -- setup`.
 - Planned: make packaged installs runnable.
 - Actual: the package now builds `dist/cli.js`, the bin wrapper targets that
   file, and the install smoke test verifies `npx sb-codex-tool setup` from an
