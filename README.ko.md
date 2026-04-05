@@ -8,6 +8,7 @@ workflow/runtime scaffold입니다.
 덮어쓰지 않도록 설계되어 있습니다.
 
 영문 README: [README.md](./README.md)
+처음 사용자 가이드: [docs/menu/getting-started.md](https://github.com/SBCHOE-AI/sb-codex-tool/blob/main/docs/menu/getting-started.md)
 
 ## 왜 필요한가
 

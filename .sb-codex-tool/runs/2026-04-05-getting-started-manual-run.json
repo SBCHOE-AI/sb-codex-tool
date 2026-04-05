@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "cycleId": "2026-04-05-getting-started-manual",
+  "dateStamp": "2026-04-05",
+  "slug": "getting-started-manual",
+  "title": "Getting Started Manual",
+  "phase": "close",
+  "stage": "clarify",
+  "verdict": "pass",
+  "git": {
+    "available": true,
+    "branch": "main",
+    "dirty": true,
+    "changedFiles": [
+      "sb-codex-tool/guides/read-this-first.md",
+      "sb-codex-tool/index/current.json",
+      "sb-codex-tool/state.md",
+      "EADME.ko.md",
+      "EADME.md",
+      ".sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md",
+      ".sb-codex-tool/handoffs/2026-04-05-getting-started-manual-to-verification.md",
+      ".sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md",
+      ".sb-codex-tool/reviews/2026-04-05-getting-started-manual-fresh-verification.md",
+      ".sb-codex-tool/runs/2026-04-05-getting-started-manual-run.json",
+      ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-execution-summary.md",
+      "docs/guides/",
+      "docs/menu/getting-started.md",
+      "tests/getting-started-docs.test.ts"
+    ]
+  },
+  "paths": {
+    "planPath": ".sb-codex-tool/plans/2026-04-05-getting-started-manual-approved.md",
+    "executionSummaryPath": ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-execution-summary.md",
+    "handoffPath": ".sb-codex-tool/handoffs/2026-04-05-getting-started-manual-to-verification.md",
+    "reviewPath": ".sb-codex-tool/reviews/2026-04-05-getting-started-manual-fresh-verification.md",
+    "guidePath": ".sb-codex-tool/guides/2026-04-05-getting-started-manual-scope.md",
+    "verificationSummaryPath": ".sb-codex-tool/summaries/2026-04-05-getting-started-manual-verification-summary.md",
+    "journalPath": ".sb-codex-tool/logs/work-journal/2026-04-05.md"
+  },
+  "startedAt": "2026-04-05T00:01:02.541Z",
+  "updatedAt": "2026-04-05T00:05:18.051Z",
+  "closedAt": "2026-04-05T00:05:18.051Z"
+}

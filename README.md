@@ -8,6 +8,7 @@ human-readable work journals in one inspectable layout without taking over the
 whole codebase.
 
 Korean README: [README.ko.md](https://github.com/SBCHOE-AI/sb-codex-tool/blob/main/README.ko.md)
+First-time Codex guide: [docs/menu/getting-started.md](https://github.com/SBCHOE-AI/sb-codex-tool/blob/main/docs/menu/getting-started.md)
 
 ## Why It Exists
 
